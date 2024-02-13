@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61BD9B5D-DE78-4246-8749-0E987E9F349E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>app_gymManager</RootNamespace>
+    <AssemblyName>app_gymManager</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="conexaoBanco.cs" />
+    <Compile Include="frmCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroUsuario.Designer.cs">
+      <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfoVisao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfoVisao.Designer.cs">
+      <DependentUpon>frmInfoVisao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadastroUsuario.resx">
+      <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoVisao.resx">
+      <DependentUpon>frmInfoVisao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\add_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\add_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\addfile_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\analytics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\analytics2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\binoculars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\bosale_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\botao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\botao2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\botao-x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\botask_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\box2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\calculatesheet_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\cancel_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\checklist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\cleartablestyle_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\close-button-png-27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\cloud-computing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\coding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\cube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\deletelist2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\delivery-truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\diagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\diagram2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\editname_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\editname_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\exit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\fundo-laranja-de-gradiente-colorido-em-cores-brilhantes-do-arco-íris-imagem-suave-e-desfocada-abstrata-papel-parede-cor-modelo-211799936.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\gears.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\information_p16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\insert_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\insert_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\insert_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\kisspng-orange-desktop-wallpaper-mobile-phones-wallpaper-abstract-5ab9bffea42cb4.2038391815221227506725.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\navigationbar_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\newemployee_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\organization.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\pallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\pallet2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\papel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\pngtree-vector-cross-icon-png-image_1020156.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\pop-music-close-button-png-icon-free-download-645906.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\price-tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Print2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\printer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\recycle-bin16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\refresh %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\refresh_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\renamedatasource_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\reset_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\rotation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\rotation16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\save_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Sem título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Sem título1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\shovel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\show_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\show_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\signing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\tag_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\tag_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\user %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\user2_16p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\work.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ws.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
