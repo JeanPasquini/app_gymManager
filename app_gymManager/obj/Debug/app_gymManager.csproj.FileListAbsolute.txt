@@ -22,3 +22,4 @@ C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymMa
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.exe
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.pdb
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmLogin.resources

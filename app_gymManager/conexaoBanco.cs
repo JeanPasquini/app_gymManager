@@ -64,7 +64,7 @@ namespace app_gymManager
                             string result = "";
                             for (int i = 0; i < reader.FieldCount; i++)
                             {
-                                result += $"{reader.GetValue(i)}\n";
+                                result += $"{reader.GetValue(i)}";
                             }
                             return result;
                         }

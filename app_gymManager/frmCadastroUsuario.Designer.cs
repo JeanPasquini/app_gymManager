@@ -54,7 +54,7 @@ namespace app_gymManager
             this.btnCancelar.Location = new System.Drawing.Point(129, 144);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -64,7 +64,7 @@ namespace app_gymManager
             this.btnCadastrar.Location = new System.Drawing.Point(210, 144);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 2;
+            this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -74,21 +74,21 @@ namespace app_gymManager
             this.txtSenha.Location = new System.Drawing.Point(153, 31);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(132, 20);
-            this.txtSenha.TabIndex = 3;
+            this.txtSenha.TabIndex = 1;
             // 
             // txtNomeCompleto
             // 
             this.txtNomeCompleto.Location = new System.Drawing.Point(12, 70);
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.Size = new System.Drawing.Size(273, 20);
-            this.txtNomeCompleto.TabIndex = 4;
+            this.txtNomeCompleto.TabIndex = 2;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(12, 109);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(142, 20);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 3;
             // 
             // label1
             // 
@@ -136,7 +136,7 @@ namespace app_gymManager
             this.txtEmail2.Location = new System.Drawing.Point(160, 108);
             this.txtEmail2.Name = "txtEmail2";
             this.txtEmail2.Size = new System.Drawing.Size(125, 21);
-            this.txtEmail2.TabIndex = 10;
+            this.txtEmail2.TabIndex = 4;
             this.txtEmail2.Text = "@outlook.com.br";
             // 
             // frmCadastroUsuario

@@ -17,7 +17,7 @@ namespace app_gymManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmLogin());
 
             using (SqlConnection connection = conexaoBanco.OpenConnection())
             {

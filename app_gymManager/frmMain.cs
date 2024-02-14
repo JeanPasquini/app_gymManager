@@ -18,7 +18,6 @@ namespace app_gymManager
         public frmMain()
         {
             InitializeComponent();
-
             toolStrips.Add(toolStrip2);
             toolStrips.Add(toolStrip3);
         }

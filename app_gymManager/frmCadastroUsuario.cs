@@ -24,21 +24,21 @@ namespace app_gymManager
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text;   
-            int senha = int.Parse(txtSenha.Text);
+            string senha = txtSenha.Text;
             string email = txtEmail.Text + txtEmail2.Text; 
             string nomeCompleto = txtNomeCompleto.Text;
 
             if (editar)
             {
                 string sql = $@"UPDATE LUSUARIO 
-                SET SENHA = '{senha}', EMAIL = '{email}', NOME = '{nomeCompleto}', USUARIO = '{usuario}'
+                SET SENHA = '{senha}', EMAIL = '{email}', NOME = '{nomeCompleto}', LOGINUSER = '{usuario}'
                  WHERE ID = '{id}'";
 
                 conexaoBanco.Executar(sql);
             }
             else
             {
-                string sql = $@"INSERT INTO LUSUARIO (USUARIO, SENHA, EMAIL, NOME)
+                string sql = $@"INSERT INTO LUSUARIO (LOGINUSER, SENHA, EMAIL, NOME)
                     VALUES ('{usuario}', '{senha}', '{email}', '{nomeCompleto}')";
 
                 conexaoBanco.Executar(sql);
@@ -58,7 +58,7 @@ namespace app_gymManager
             {
                 string sql = $"SELECT * FROM LUSUARIO WHERE ID = '{id}'";
 
-                txtUsuario.Text = conexaoBanco.GetRowAsString(sql, "USUARIO");
+                txtUsuario.Text = conexaoBanco.GetRowAsString(sql, "LOGINUSER");
                 txtSenha.Text = conexaoBanco.GetRowAsString(sql, "SENHA");
                 txtNomeCompleto.Text = conexaoBanco.GetRowAsString(sql, "NOME");
 
