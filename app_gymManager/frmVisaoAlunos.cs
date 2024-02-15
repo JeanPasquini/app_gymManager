@@ -26,15 +26,6 @@ namespace app_gymManager
         private void btnInserir_Click(object sender, EventArgs e)
         {
             int id = 0;
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-            }
-            else
-            {
-            }
-
             frmCadastroAluno frm = new frmCadastroAluno(false, id);
             frm.ShowDialog();
             AtualizaGrid();

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexaoBanco.cs" />
+    <Compile Include="frmCadastroAvaliacaoIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroAvaliacaoIndividual.Designer.cs">
+      <DependentUpon>frmCadastroAvaliacaoIndividual.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVisaoAvaliacaoIndividuais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisaoAvaliacaoIndividuais.Designer.cs">
+      <DependentUpon>frmVisaoAvaliacaoIndividuais.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVisaoInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     <Compile Include="frmVisaoAlunos.Designer.cs">
       <DependentUpon>frmVisaoAlunos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVisaoAvaliacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisaoAvaliacao.Designer.cs">
+      <DependentUpon>frmVisaoAvaliacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVisaoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +109,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadastroAvaliacaoIndividual.resx">
+      <DependentUpon>frmCadastroAvaliacaoIndividual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroAluno.resx">
       <DependentUpon>frmCadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,11 +124,17 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVisaoAvaliacaoIndividuais.resx">
+      <DependentUpon>frmVisaoAvaliacaoIndividuais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVisaoInfo.resx">
       <DependentUpon>frmVisaoInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisaoAlunos.resx">
       <DependentUpon>frmVisaoAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisaoAvaliacao.resx">
+      <DependentUpon>frmVisaoAvaliacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisaoUsuario.resx">
       <DependentUpon>frmVisaoUsuario.cs</DependentUpon>

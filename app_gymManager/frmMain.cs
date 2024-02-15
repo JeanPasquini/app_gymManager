@@ -70,7 +70,16 @@ namespace app_gymManager
 
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
+            frmVisaoAvaliacao frm = new frmVisaoAvaliacao();
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
 
+
+            mainTela.Controls.Clear();
+            mainTela.Controls.Add(frm);
+
+            frm.Show();
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)

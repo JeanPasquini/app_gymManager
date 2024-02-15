@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace app_gymManager
 {
@@ -28,6 +29,7 @@ namespace app_gymManager
             catch (Exception ex)
             {
                 Console.WriteLine($"Erro ao conectar ao banco de dados: {ex.Message}");
+                MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -76,6 +78,7 @@ namespace app_gymManager
                     catch (Exception ex)
                     {
                         Console.WriteLine($"Erro ao executar a consulta: {ex.Message}");
+                        MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return null;
                     }
                 }
@@ -106,6 +109,7 @@ namespace app_gymManager
             catch (Exception ex)
             {
                 Console.WriteLine($"Erro ao executar a consulta: {ex.Message}");
+                MessageBox.Show($"Erro ao executar a consulta: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return dataTable;
@@ -124,7 +128,8 @@ namespace app_gymManager
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Erro ao executar a consulta: {ex.Message}");
+                    //Console.WriteLine($"Erro ao executar a consulta: {ex.Message}");
+                    MessageBox.Show($"Erro ao executar a consulta: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

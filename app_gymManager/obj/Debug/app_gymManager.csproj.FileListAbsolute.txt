@@ -26,3 +26,6 @@ C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymMa
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoUsuario.resources
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmCadastroAluno.resources
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoAlunos.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoAvaliacao.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmCadastroAvaliacaoIndividual.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoAvaliacaoIndividuais.resources
