@@ -15,7 +15,6 @@ C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\bin\Debug\app_gymMa
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\bin\Debug\app_gymManager.pdb
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.csproj.AssemblyReference.cache
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmCadastroUsuario.resources
-C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmInfoVisao.resources
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmMain.resources
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.Properties.Resources.resources
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.csproj.GenerateResource.cache
@@ -23,3 +22,7 @@ C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymMa
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.exe
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.pdb
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmLogin.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoInfo.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoUsuario.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmCadastroAluno.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoAlunos.resources

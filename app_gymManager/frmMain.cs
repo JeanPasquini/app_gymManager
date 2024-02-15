@@ -13,13 +13,23 @@ namespace app_gymManager
 {
     public partial class frmMain : Form
     {
-
+        private int id;
         private List<ToolStrip> toolStrips = new List<ToolStrip>();
-        public frmMain()
+        public frmMain(int id)
         {
             InitializeComponent();
             toolStrips.Add(toolStrip2);
-            toolStrips.Add(toolStrip3);
+            toolStrips.Add(toolStrip4);
+            //toolStrips.Add(toolStrip3);
+            this.id = id;
+            infoUser();
+        }
+
+        private void infoUser()
+        {
+            string sql = $"SELECT * FROM LUSUARIO WHERE ID = {id}";
+
+            toolStripStatusLabel1.Text = (conexaoBanco.GetRowAsString(sql, "NOME"));
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -29,7 +39,7 @@ namespace app_gymManager
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            MostrarToolStrip(toolStrip3);
+            //MostrarToolStrip(toolStrip3);
         }
         private void MostrarToolStrip(ToolStrip toolStripAMostrar)
         {
@@ -41,7 +51,12 @@ namespace app_gymManager
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            frmInfoVisao frm = new frmInfoVisao();
+
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            frmVisaoAlunos frm = new frmVisaoAlunos();
             frm.TopLevel = false;
             frm.Dock = DockStyle.Fill;
             frm.ControlBox = false;
@@ -51,6 +66,30 @@ namespace app_gymManager
             mainTela.Controls.Add(frm);
 
             frm.Show();
+        }
+
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            frmVisaoUsuario frm = new frmVisaoUsuario();
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+
+
+            mainTela.Controls.Clear();
+            mainTela.Controls.Add(frm);
+
+            frm.Show();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            MostrarToolStrip(toolStrip4);
         }
     }
 }

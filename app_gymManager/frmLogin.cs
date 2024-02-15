@@ -25,8 +25,10 @@ namespace app_gymManager
             string sqlUsuario = $"SELECT * FROM LUSUARIO WHERE LOGINUSER = '{usuario}'";
             string sqlSenha = $"SELECT * FROM LUSUARIO WHERE LOGINUSER = '{usuario}' AND SENHA = '{senha}'";
 
+
             string usuarioBanco = conexaoBanco.GetRowAsString(sqlUsuario, "LOGINUSER");
-            string senhaBanco = conexaoBanco.GetRowAsString(sqlSenha, "SENHA"); ;
+            string senhaBanco = conexaoBanco.GetRowAsString(sqlSenha, "SENHA");
+            
 
             // Verificar se a senha do banco pode ser convertida para int
             if (usuario == usuarioBanco && senha != senhaBanco)
@@ -43,8 +45,9 @@ namespace app_gymManager
             else
             {
                 this.Hide();
-                frmMain mainForm = new frmMain();
-                mainForm.Show();
+                int id = int.Parse(conexaoBanco.GetRowAsString(sqlSenha, "ID"));
+                frmMain mainForm = new frmMain(id);
+                mainForm.ShowDialog();
                 this.Close();
             }
         }

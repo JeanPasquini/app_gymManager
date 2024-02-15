@@ -45,9 +45,9 @@ namespace app_gymManager
             // 
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.Image = global::app_gymManager.Properties.Resources.Sem_título;
-            pictureBox1.Location = new System.Drawing.Point(-30, -2);
+            pictureBox1.Location = new System.Drawing.Point(-30, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(257, 198);
+            pictureBox1.Size = new System.Drawing.Size(264, 230);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -118,7 +118,7 @@ namespace app_gymManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 194);
+            this.ClientSize = new System.Drawing.Size(426, 228);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -127,7 +127,7 @@ namespace app_gymManager
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEntrar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
