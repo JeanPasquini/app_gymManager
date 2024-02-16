@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace app_gymManager
 {
     public partial class frmMain : Form
@@ -27,9 +28,10 @@ namespace app_gymManager
 
         private void infoUser()
         {
-            string sql = $"SELECT * FROM LUSUARIO WHERE ID = {id}";
+            string sql = $"SELECT LU.*, DP.DESCRICAO FROM LUSUARIO LU INNER JOIN DINAMICAPERMISSOES DP ON LU.CODPERMISSAO = DP.ID WHERE LU.ID = '{id}'";
 
-            toolStripStatusLabel1.Text = (conexaoBanco.GetRowAsString(sql, "NOME"));
+            toolStripStatusLabel1.Text = conexaoBanco.GetRowAsString(sql, "NOME");
+            txtPermissao.Text = "- " + conexaoBanco.GetRowAsString(sql, "DESCRICAO");
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -51,54 +53,78 @@ namespace app_gymManager
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            frmVisaoAlunos frm = new frmVisaoAlunos();
-            frm.TopLevel = false;
-            frm.Dock = DockStyle.Fill;
-            frm.ControlBox = false;
+            if (permissaoBotoes.permissao(4)){
+                frmVisaoAlunos frm = new frmVisaoAlunos();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.ControlBox = false;
 
 
-            mainTela.Controls.Clear();
-            mainTela.Controls.Add(frm);
+                mainTela.Controls.Clear();
+                mainTela.Controls.Add(frm);
 
-            frm.Show();
+                frm.Show();
+            }
         }
 
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
-            frmVisaoAvaliacao frm = new frmVisaoAvaliacao();
-            frm.TopLevel = false;
-            frm.Dock = DockStyle.Fill;
-            frm.ControlBox = false;
+            if (permissaoBotoes.permissao(5))
+            {
+                frmVisaoAvaliacao frm = new frmVisaoAvaliacao();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.ControlBox = false;
 
 
-            mainTela.Controls.Clear();
-            mainTela.Controls.Add(frm);
+                mainTela.Controls.Clear();
+                mainTela.Controls.Add(frm);
 
-            frm.Show();
+                frm.Show();
+            }
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
-            frmVisaoUsuario frm = new frmVisaoUsuario();
-            frm.TopLevel = false;
-            frm.Dock = DockStyle.Fill;
-            frm.ControlBox = false;
+            if (permissaoBotoes.permissao(1))
+            {
+                frmVisaoUsuario frm = new frmVisaoUsuario();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.ControlBox = false;
 
 
-            mainTela.Controls.Clear();
-            mainTela.Controls.Add(frm);
+                mainTela.Controls.Clear();
+                mainTela.Controls.Add(frm);
 
-            frm.Show();
+                frm.Show();
+            }
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             MostrarToolStrip(toolStrip4);
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            if (permissaoBotoes.permissao(2))
+            {
+                frmVisaoPermissoes frm = new frmVisaoPermissoes();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.ControlBox = false;
+
+
+                mainTela.Controls.Clear();
+                mainTela.Controls.Add(frm);
+
+                frm.Show();
+            }
         }
     }
 }

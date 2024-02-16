@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +50,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexaoBanco.cs" />
+    <Compile Include="frmSelecionaBotao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelecionaBotao.Designer.cs">
+      <DependentUpon>frmSelecionaBotao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelecionaPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelecionaPermissao.Designer.cs">
+      <DependentUpon>frmSelecionaPermissao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastroPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroPermissao.Designer.cs">
+      <DependentUpon>frmCadastroPermissao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastroAvaliacaoIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +97,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisaoPermissoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisaoPermissoes.Designer.cs">
+      <DependentUpon>frmVisaoPermissoes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVisaoAvaliacaoIndividuais.cs">
       <SubType>Form</SubType>
@@ -107,8 +134,18 @@
     <Compile Include="frmVisaoUsuario.Designer.cs">
       <DependentUpon>frmVisaoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="permissaoBotoes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmSelecionaBotao.resx">
+      <DependentUpon>frmSelecionaBotao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelecionaPermissao.resx">
+      <DependentUpon>frmSelecionaPermissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroPermissao.resx">
+      <DependentUpon>frmCadastroPermissao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroAvaliacaoIndividual.resx">
       <DependentUpon>frmCadastroAvaliacaoIndividual.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisaoPermissoes.resx">
+      <DependentUpon>frmVisaoPermissoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisaoAvaliacaoIndividuais.resx">
       <DependentUpon>frmVisaoAvaliacaoIndividuais.cs</DependentUpon>
@@ -162,7 +202,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="resources\add.png" />
   </ItemGroup>

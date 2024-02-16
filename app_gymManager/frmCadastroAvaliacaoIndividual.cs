@@ -26,6 +26,9 @@ namespace app_gymManager
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            string descricao = txtDescricao.Text;
+            DateTime dataAvaliacao = DateTime.Parse(txtDataAvaliacao.Text);
+        
             double bracoDireito = !String.IsNullOrWhiteSpace(txtBracoDireito.Text) ? double.Parse(txtBracoDireito.Text) : 0;
             double bracoEsquerdo = !String.IsNullOrWhiteSpace(txtBracoEsquerdo.Text) ? double.Parse(txtBracoEsquerdo.Text) : 0;
             double pernaDireita = !String.IsNullOrWhiteSpace(txtPernaDireita.Text) ? double.Parse(txtPernaDireita.Text) : 0;
@@ -34,15 +37,15 @@ namespace app_gymManager
             if (editar)
             {
                 string sql = $@"UPDATE AVALIACAOALUNO
-                    SET IDALUNO = '{idAluno}', BRACODIREITO = '{bracoDireito}', BRACOESQUERDO = '{bracoEsquerdo}', PERNADIREITA = '{pernaDireita}', PERNAESQUERDA = '{pernaEsquerda}'
+                    SET IDALUNO = '{idAluno}', DATAAVALIACAO = '{dataAvaliacao: yyyy - MM - dd}', DESCRICAO = '{descricao}' ,BRACODIREITO = '{bracoDireito.ToString(CultureInfo.InvariantCulture)}', BRACOESQUERDO = '{bracoEsquerdo.ToString(CultureInfo.InvariantCulture)}', PERNADIREITA = '{pernaDireita.ToString(CultureInfo.InvariantCulture)}', PERNAESQUERDA = '{pernaEsquerda.ToString(CultureInfo.InvariantCulture)}'
                  WHERE ID = '{id}'";
 
                 conexaoBanco.Executar(sql);
             }
             else
             {
-                string sql = $@"INSERT INTO AVALIACAOALUNO (IDALUNO, BRACODIREITO, BRACOESQUERDO, PERNADIREITA, PERNAESQUERDA)
-                    VALUES ('{idAluno}', {bracoDireito.ToString(CultureInfo.InvariantCulture)}, {bracoEsquerdo.ToString(CultureInfo.InvariantCulture)}, {pernaDireita.ToString(CultureInfo.InvariantCulture)}, {pernaEsquerda.ToString(CultureInfo.InvariantCulture)})";
+                string sql = $@"INSERT INTO AVALIACAOALUNO (IDALUNO, DATAAVALIACAO, DESCRICAO, BRACODIREITO, BRACOESQUERDO, PERNADIREITA, PERNAESQUERDA)
+                    VALUES ('{idAluno}', '{dataAvaliacao: yyyy - MM - dd}' , '{descricao}' ,{bracoDireito.ToString(CultureInfo.InvariantCulture)}, {bracoEsquerdo.ToString(CultureInfo.InvariantCulture)}, {pernaDireita.ToString(CultureInfo.InvariantCulture)}, {pernaEsquerda.ToString(CultureInfo.InvariantCulture)})";
 
                 conexaoBanco.Executar(sql);
             }
@@ -70,6 +73,8 @@ namespace app_gymManager
                 txtPernaEsquerda.Text = conexaoBanco.GetRowAsString(sqlAval, "PERNAESQUERDA");
                 txtBracoDireito.Text = conexaoBanco.GetRowAsString(sqlAval, "BRACODIREITO");
                 txtBracoEsquerdo.Text = conexaoBanco.GetRowAsString(sqlAval, "BRACOESQUERDO");
+                txtDataAvaliacao.Text = conexaoBanco.GetRowAsString(sqlAval, "DATAAVALIACAO");
+                txtDescricao.Text = conexaoBanco.GetRowAsString(sqlAval, "DESCRICAO");
             }
             else
             {

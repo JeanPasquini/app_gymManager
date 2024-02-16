@@ -48,14 +48,20 @@ namespace app_gymManager
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtDataNascimento = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtDataAvaliacao = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(157, 370);
+            this.btnCancelar.Location = new System.Drawing.Point(157, 534);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 6;
@@ -65,7 +71,7 @@ namespace app_gymManager
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(238, 370);
+            this.btnCadastrar.Location = new System.Drawing.Point(238, 534);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 5;
@@ -96,7 +102,7 @@ namespace app_gymManager
             this.groupBox1.Controls.Add(this.txtBracoDireito);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtBracoEsquerdo);
-            this.groupBox1.Location = new System.Drawing.Point(12, 127);
+            this.groupBox1.Location = new System.Drawing.Point(12, 292);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(301, 118);
             this.groupBox1.TabIndex = 10;
@@ -116,7 +122,7 @@ namespace app_gymManager
             // 
             this.txtBracoDireito.Location = new System.Drawing.Point(11, 43);
             this.txtBracoDireito.Name = "txtBracoDireito";
-            this.txtBracoDireito.Size = new System.Drawing.Size(276, 20);
+            this.txtBracoDireito.Size = new System.Drawing.Size(273, 20);
             this.txtBracoDireito.TabIndex = 11;
             // 
             // label7
@@ -132,7 +138,7 @@ namespace app_gymManager
             // 
             this.txtBracoEsquerdo.Location = new System.Drawing.Point(11, 82);
             this.txtBracoEsquerdo.Name = "txtBracoEsquerdo";
-            this.txtBracoEsquerdo.Size = new System.Drawing.Size(276, 20);
+            this.txtBracoEsquerdo.Size = new System.Drawing.Size(273, 20);
             this.txtBracoEsquerdo.TabIndex = 13;
             // 
             // groupBox2
@@ -141,7 +147,7 @@ namespace app_gymManager
             this.groupBox2.Controls.Add(this.txtPernaEsquerda);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtPernaDireita);
-            this.groupBox2.Location = new System.Drawing.Point(12, 251);
+            this.groupBox2.Location = new System.Drawing.Point(12, 416);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(301, 113);
             this.groupBox2.TabIndex = 21;
@@ -188,7 +194,7 @@ namespace app_gymManager
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtNomeCompleto);
-            this.groupBox3.Location = new System.Drawing.Point(12, 12);
+            this.groupBox3.Location = new System.Drawing.Point(12, 177);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(301, 109);
             this.groupBox3.TabIndex = 22;
@@ -231,11 +237,60 @@ namespace app_gymManager
             this.label11.TabIndex = 10;
             this.label11.Text = "Data de Nascimento";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtDataAvaliacao);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.txtDescricao);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(301, 159);
+            this.groupBox4.TabIndex = 23;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Dados avaliação";
+            // 
+            // txtDataAvaliacao
+            // 
+            this.txtDataAvaliacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDataAvaliacao.Location = new System.Drawing.Point(11, 36);
+            this.txtDataAvaliacao.Name = "txtDataAvaliacao";
+            this.txtDataAvaliacao.Size = new System.Drawing.Size(104, 20);
+            this.txtDataAvaliacao.TabIndex = 16;
+            this.txtDataAvaliacao.Value = new System.DateTime(2024, 2, 16, 10, 1, 14, 0);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Descrição";
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(11, 75);
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(273, 65);
+            this.txtDescricao.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Dia da avaliação";
+            // 
             // frmCadastroAvaliacaoIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 401);
+            this.ClientSize = new System.Drawing.Size(325, 569);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -251,6 +306,8 @@ namespace app_gymManager
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -275,5 +332,10 @@ namespace app_gymManager
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.MaskedTextBox txtDataNascimento;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DateTimePicker txtDataAvaliacao;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.Label label1;
     }
 }

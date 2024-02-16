@@ -38,6 +38,9 @@ namespace app_gymManager
         {
             string sql = $"SELECT * FROM AVALIACAOALUNO WHERE IDALUNO = '{idAluno}'";
             dataGridView1.DataSource = conexaoBanco.GetDataTable(sql);
+
+            string sqlinfo = $"SELECT * FROM ALUNO WHERE ID = '{idAluno}'";
+            toolStripLabel1.Text = conexaoBanco.GetRowAsString(sqlinfo, "NOME");
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -73,7 +76,7 @@ namespace app_gymManager
 
                     conexaoBanco.Executar(sql);
 
-                    MessageBox.Show("O usuário de id: " + id + " foi removido!");
+                    MessageBox.Show("Avaliação de id: " + id + " foi removido!");
                 }
                 else
                 {
@@ -81,7 +84,7 @@ namespace app_gymManager
             }
             else
             {
-                MessageBox.Show("Por favor, selecione um usuário antes de prosseguir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, selecione uma avaliação antes de prosseguir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             AtualizaGrid();
         }

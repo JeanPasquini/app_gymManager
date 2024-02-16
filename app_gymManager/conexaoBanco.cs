@@ -13,6 +13,7 @@ namespace app_gymManager
     public static class conexaoBanco
     {
         private static string connectionString;
+        public static int idUser;
 
         public static SqlConnection OpenConnection()
         {
@@ -72,7 +73,7 @@ namespace app_gymManager
                         }
                         else
                         {
-                            return "Nenhuma linha encontrada para a consulta fornecida.";
+                            return null;
                         }
                     }
                     catch (Exception ex)

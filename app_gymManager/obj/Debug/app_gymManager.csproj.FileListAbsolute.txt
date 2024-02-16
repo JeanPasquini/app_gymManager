@@ -29,3 +29,7 @@ C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymMa
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoAvaliacao.resources
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmCadastroAvaliacaoIndividual.resources
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoAvaliacaoIndividuais.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoPermissoes.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmSelecionaPermissao.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmCadastroPermissao.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmSelecionaBotao.resources
