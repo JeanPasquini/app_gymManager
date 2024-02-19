@@ -17,8 +17,8 @@ namespace app_gymManager
 
         public static SqlConnection OpenConnection()
         {
-            string server = "TI\\SQLEXPRESS";
-            string database = "dbgymmanager";
+            string server = "";
+            string database = "";
             connectionString = $"Data Source={server};Initial Catalog={database};Integrated Security=True";
 
             try
