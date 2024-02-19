@@ -23,48 +23,42 @@ namespace app_gymManager
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string senha = txtSenha.Text;
-            string email = txtEmail.Text + txtEmail2.Text; // Apenas para correção, considerando que txtEmail2.Text contenha o domínio de email
-            string nomeCompleto = txtNomeCompleto.Text;
-            string cpf = txtCPF.Text;
-            string telefone = txtNumeroTelefone.Text;
-            DateTime dataNascimento = DateTime.Parse(txtDataNascimento.Text);
-            string cidade = txtCidade.Text;
-            string rua = txtRua.Text;
-            string bairro = txtBairro.Text;
-            string casa = txtNumeroCasa.Text;
-            string cep = txtCEP.Text; // Alterado para string para preservar os zeros à esquerda, se houver
+            if (Validar()) { 
+                string usuario = txtUsuario.Text;
+                string senha = txtSenha.Text;
+                string email = txtEmail.Text + txtEmail2.Text; // Apenas para correção, considerando que txtEmail2.Text contenha o domínio de email
+                string nomeCompleto = txtNomeCompleto.Text;
+                string cpf = txtCPF.Text;
+                string telefone = txtNumeroTelefone.Text;
+                DateTime dataNascimento = DateTime.Parse(txtDataNascimento.Text);
+                string cidade = txtCidade.Text;
+                string rua = txtRua.Text;
+                string bairro = txtBairro.Text;
+                string casa = txtNumeroCasa.Text;
+                string cep = txtCEP.Text; // Alterado para string para preservar os zeros à esquerda, se houver
 
-            if (editar)
-            {
-                string sql = $@"UPDATE ALUNO
-                    SET LOGINUSER = '{usuario}', SENHA = '{senha}', EMAIL = '{email}', NOME = '{nomeCompleto}', CPF = '{cpf}', TELEFONE = '{telefone}', DATANASCIMENTO = '{dataNascimento:yyyy-MM-dd}' , 
-                        CIDADE = '{cidade}', RUA = '{rua}' , BAIRRO = '{bairro}', CASA = '{casa}' , CEP = '{cep}'
-                 WHERE ID = '{id}'";
+                if (VerificaBanco(usuario, email))
+                {
+                    if (editar)
+                    {
+                        string sql = $@"UPDATE LUSUARIO
+                    SET LOGINUSER = '{usuario}', SENHA = '{senha}', EMAIL = '{email}', NOME = '{nomeCompleto}', CPF = '{cpf}', TELEFONE = '{telefone}', DATANASCIMENTO = '{dataNascimento:yyyy-MM-dd}',
+                        CIDADE = '{cidade}', RUA = '{rua}', BAIRRO = '{bairro}', CASA = '{casa}', CEP = '{cep}'
+                    WHERE ID = '{id}'";
 
-                conexaoBanco.Executar(sql);
+                        conexaoBanco.Executar(sql);
+                    }
+                    else
+                    {
+                        string sql = $@"INSERT INTO LUSUARIO (CODPERMISSAO, LOGINUSER, SENHA, EMAIL, NOME, CPF, TELEFONE, DATANASCIMENTO, CIDADE, RUA, BAIRRO, CASA, CEP )
+                    VALUES ('4', '{usuario}', '{senha}', '{email}', '{nomeCompleto}', '{cpf}', '{telefone}', '{dataNascimento:yyyy-MM-dd}', '{cidade}', '{rua}', '{bairro}', '{casa}', '{cep}')";
+
+                        conexaoBanco.Executar(sql);
+                    }
+
+                    this.Close();
+                }
             }
-            else
-            {
-                string sql = $@"INSERT INTO ALUNO ( LOGINUSER,
-                                        SENHA,
-                                        EMAIL ,
-                                        NOME ,
-                                        CPF ,
-                                        TELEFONE ,
-                                        DATANASCIMENTO ,
-                                        CIDADE ,
-                                        RUA ,
-                                        BAIRRO ,
-                                        CASA ,
-                                        CEP)
-                    VALUES ('{usuario}', '{senha}', '{email}', '{nomeCompleto}', '{cpf}', '{telefone}', '{dataNascimento:yyyy-MM-dd}' , '{cidade}', '{rua}' , '{bairro}', '{casa}' , '{cep}')";
-
-                conexaoBanco.Executar(sql);
-            }
-
-            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -76,7 +70,7 @@ namespace app_gymManager
         {
             if (editar)
             {
-                string sql = $"SELECT * FROM ALUNO WHERE ID = '{id}'";
+                string sql = $"SELECT * FROM LUSUARIO WHERE ID = '{id}'";
 
                 txtUsuario.Text = conexaoBanco.GetRowAsString(sql, "LOGINUSER");
                 txtSenha.Text = conexaoBanco.GetRowAsString(sql, "SENHA");
@@ -100,6 +94,28 @@ namespace app_gymManager
                     txtEmail2.Text =  "@" + after;
                 }
             }
+        }
+
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtUsuario.Text)) { MessageBox.Show("O campo do usuário não pode estar vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; }
+            else if (String.IsNullOrWhiteSpace(txtSenha.Text)) { MessageBox.Show("O campo de senha não pode estar vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; }
+            else if (String.IsNullOrWhiteSpace(txtNomeCompleto.Text)) { MessageBox.Show("O campo nome completo não pode estar vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; }
+            else {; return true; }
+        }
+
+        private bool VerificaBanco(string p1, string p2)
+        {
+            string sqlid = $@"SELECT * FROM LUSUARIO WHERE ID = '{id}'";
+            string sql = $@"SELECT * FROM LUSUARIO WHERE LOGINUSER = '{p1}'";
+            string sqlemail = $@"SELECT * FROM LUSUARIO WHERE EMAIL = '{p2}'";
+
+            string existingLoginUser = conexaoBanco.GetRowAsString(sql, "LOGINUSER");
+            string existingEmail = conexaoBanco.GetRowAsString(sqlemail, "EMAIL");
+
+            if (!String.IsNullOrWhiteSpace(existingLoginUser)) { if (conexaoBanco.GetRowAsString(sqlid, "LOGINUSER") == p1) { } else { MessageBox.Show("Já existe um usuário cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; } }
+            if (!String.IsNullOrWhiteSpace(existingEmail)) { if (conexaoBanco.GetRowAsString(sqlid, "EMAIL") == p2) { } else { MessageBox.Show("Já existe um email cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; } }
+            return true;
         }
     }
 }

@@ -23,29 +23,35 @@ namespace app_gymManager
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;   
-            string senha = txtSenha.Text;
-            string email = txtEmail.Text + txtEmail2.Text; 
-            string nomeCompleto = txtNomeCompleto.Text;
-            string codePermissao = txtID.Text;
-
-            if (editar)
+            if (Validar())
             {
-                string sql = $@"UPDATE LUSUARIO 
-                SET SENHA = '{senha}', EMAIL = '{email}', NOME = '{nomeCompleto}', LOGINUSER = '{usuario}', CODPERMISSAO = '{codePermissao}'
-                 WHERE ID = '{id}'";
+                string usuario = txtUsuario.Text;
+                string senha = txtSenha.Text;
+                string email = txtEmail.Text + txtEmail2.Text;
+                string nomeCompleto = txtNomeCompleto.Text;
+                string codePermissao = txtID.Text;
 
-                conexaoBanco.Executar(sql);
-            }
-            else
-            {
-                string sql = $@"INSERT INTO LUSUARIO (LOGINUSER, SENHA, EMAIL, NOME, CODPERMISSAO)
+                if (VerificaBanco(usuario, email))
+                {
+                    if (editar)
+                    {
+                        string sql = $@"UPDATE LUSUARIO 
+                    SET SENHA = '{senha}', EMAIL = '{email}', NOME = '{nomeCompleto}', LOGINUSER = '{usuario}', CODPERMISSAO = '{codePermissao}'
+                    WHERE ID = '{id}'";
+
+                        conexaoBanco.Executar(sql);
+                    }
+                    else
+                    {
+                        string sql = $@"INSERT INTO LUSUARIO (LOGINUSER, SENHA, EMAIL, NOME, CODPERMISSAO)
                     VALUES ('{usuario}', '{senha}', '{email}', '{nomeCompleto}' , '{codePermissao}')";
 
-                conexaoBanco.Executar(sql);
-            }
+                        conexaoBanco.Executar(sql);
+                    }
 
-            this.Close();
+                    this.Close();
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -74,6 +80,8 @@ namespace app_gymManager
                     txtEmail.Text = before;
                     txtEmail2.Text = "@" + after;
                 }
+
+                btnCadastrar.Text = "Editar";
             }
         }
 
@@ -83,6 +91,30 @@ namespace app_gymManager
             frm.ShowDialog();
             txtID.Text = frm.id.ToString();
             txtPermissao.Text = frm.permissao.ToString();
+        }
+
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtUsuario.Text)) { MessageBox.Show("O campo de usuário não pode estar vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; }
+            else if (String.IsNullOrWhiteSpace(txtSenha.Text)) { MessageBox.Show("O campo da senha não pode estar vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; }
+            else if (String.IsNullOrWhiteSpace(txtNomeCompleto.Text)) { MessageBox.Show("O campo nome completo permissão não pode estar vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; }
+            else if (String.IsNullOrWhiteSpace(txtID.Text)) { MessageBox.Show("O campo da permissão não pode estar vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; }
+            else if (String.IsNullOrWhiteSpace(txtEmail.Text)) { MessageBox.Show("O campo do email não pode estar vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; } 
+            else {; return true; }
+        }
+
+        private bool VerificaBanco(string p1, string p2)
+        {
+            string sqlid = $@"SELECT * FROM LUSUARIO WHERE ID = '{id}'";
+            string sql = $@"SELECT * FROM LUSUARIO WHERE LOGINUSER = '{p1}'";
+            string sqlemail = $@"SELECT * FROM LUSUARIO WHERE EMAIL = '{p2}'";
+
+            string existingLoginUser = conexaoBanco.GetRowAsString(sql, "LOGINUSER");
+            string existingEmail = conexaoBanco.GetRowAsString(sqlemail, "EMAIL");
+
+            if (!String.IsNullOrWhiteSpace(existingLoginUser)){if (conexaoBanco.GetRowAsString(sqlid, "LOGINUSER") == p1){}else{MessageBox.Show("Já existe um usuário cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);return false;}}
+            if (!String.IsNullOrWhiteSpace(existingEmail)){if (conexaoBanco.GetRowAsString(sqlid, "EMAIL") == p2){}else{MessageBox.Show("Já existe um email cadastrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);return false;}}
+            return true;
         }
     }
 }

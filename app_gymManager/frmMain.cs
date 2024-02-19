@@ -53,6 +53,19 @@ namespace app_gymManager
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+            if (permissaoBotoes.permissao(3))
+            {
+                frmVisaoInfo frm = new frmVisaoInfo();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.ControlBox = false;
+
+
+                mainTela.Controls.Clear();
+                mainTela.Controls.Add(frm);
+
+                frm.Show();
+            }
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)

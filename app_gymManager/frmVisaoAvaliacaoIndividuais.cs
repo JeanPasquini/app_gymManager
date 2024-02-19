@@ -39,7 +39,8 @@ namespace app_gymManager
             string sql = $"SELECT * FROM AVALIACAOALUNO WHERE IDALUNO = '{idAluno}'";
             dataGridView1.DataSource = conexaoBanco.GetDataTable(sql);
 
-            string sqlinfo = $"SELECT * FROM ALUNO WHERE ID = '{idAluno}'";
+
+            string sqlinfo = $"SELECT * FROM LUSUARIO WHERE ID = '{idAluno}'";
             toolStripLabel1.Text = conexaoBanco.GetRowAsString(sqlinfo, "NOME");
         }
 

@@ -33,7 +33,7 @@ namespace app_gymManager
 
         private void AtualizaGrid()
         {
-            string sql = "SELECT * FROM ALUNO";
+            string sql = "SELECT * FROM LUSUARIO WHERE CODPERMISSAO = '4'";
             dataGridView1.DataSource = conexaoBanco.GetDataTable(sql);
         }
 
@@ -66,7 +66,7 @@ namespace app_gymManager
                     DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                     id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                    string sql = $"DELETE FROM ALUNO WHERE ID = '{id}'";
+                    string sql = $"DELETE FROM LUSUARIO WHERE ID = '{id}'";
 
                     conexaoBanco.Executar(sql);
 

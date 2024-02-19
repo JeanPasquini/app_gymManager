@@ -81,14 +81,23 @@ namespace app_gymManager
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string idbotao = txtID.Text;
-            string usuario = id.ToString();
-            string sql = $@"INSERT INTO BOTOESPERMISSOES (IDBOTAO, IDUSUARIO)
+            if (Validar())
+            {
+                string idbotao = txtID.Text;
+                string usuario = id.ToString();
+                string sql = $@"INSERT INTO BOTOESPERMISSOES (IDBOTAO, IDUSUARIO)
                     VALUES ('{idbotao}', '{usuario}')";
 
-            conexaoBanco.Executar(sql);
-            MessageBox.Show("Foi permitido o botão de id: " + idbotao);
-            AtualizaGrid();
+                conexaoBanco.Executar(sql);
+                MessageBox.Show("Foi permitido o botão de id: " + idbotao);
+                AtualizaGrid();
+            }
+        }
+
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtPermissao.Text)) { MessageBox.Show("O campo da permissão não pode estar vazio", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information); return false; }
+            else {; return true; }
         }
     }
 }

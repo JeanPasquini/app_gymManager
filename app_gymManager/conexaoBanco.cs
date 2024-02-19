@@ -17,8 +17,8 @@ namespace app_gymManager
 
         public static SqlConnection OpenConnection()
         {
-            string server = "";
-            string database = "";
+            string server = "TI\\SQLEXPRESS";
+            string database = "dbgymmanager";
             connectionString = $"Data Source={server};Initial Catalog={database};Integrated Security=True";
 
             try
@@ -82,6 +82,10 @@ namespace app_gymManager
                         MessageBox.Show($"Erro ao conectar ao banco de dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return null;
                     }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
                 else
                 {
@@ -93,24 +97,28 @@ namespace app_gymManager
         public static DataTable GetDataTable(string query)
         {
             DataTable dataTable = new DataTable();
-
-            try
+            using (SqlConnection connection = OpenConnection())
             {
-                using (SqlConnection connection = OpenConnection())
+                try
                 {
-                    if (connection != null && connection.State == ConnectionState.Open)
-                    {
-                        SqlCommand command = new SqlCommand(query, connection);
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                
+                        if (connection != null && connection.State == ConnectionState.Open)
+                        {
+                            SqlCommand command = new SqlCommand(query, connection);
+                            SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-                        adapter.Fill(dataTable);
-                    }
+                            adapter.Fill(dataTable);
+                        }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao executar a consulta: {ex.Message}");
-                MessageBox.Show($"Erro ao executar a consulta: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erro ao executar a consulta: {ex.Message}");
+                    MessageBox.Show($"Erro ao executar a consulta: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
 
             return dataTable;
@@ -131,6 +139,10 @@ namespace app_gymManager
                 {
                     //Console.WriteLine($"Erro ao executar a consulta: {ex.Message}");
                     MessageBox.Show($"Erro ao executar a consulta: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
         }

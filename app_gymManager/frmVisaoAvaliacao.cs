@@ -42,7 +42,7 @@ namespace app_gymManager
 
         private void AtualizaGrid()
         {
-            string sql = "SELECT ID, NOME, DATANASCIMENTO FROM ALUNO";
+            string sql = "SELECT * FROM LUSUARIO WHERE CODPERMISSAO = '4'";
             dataGridView1.DataSource = conexaoBanco.GetDataTable(sql);
         }
 
@@ -60,35 +60,6 @@ namespace app_gymManager
 
             frmVisaoAvaliacaoIndividuais frm = new frmVisaoAvaliacaoIndividuais(id);
             frm.ShowDialog();
-            AtualizaGrid();
-        }
-
-        private void btnRemover_Click(object sender, EventArgs e)
-        {
-            int id = 0;
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                DialogResult resultado = MessageBox.Show("Tem certeza que deseja realizar esta ação?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (resultado == DialogResult.Yes)
-                {
-
-                    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                    id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-
-                    string sql = $"DELETE FROM LUSUARIO WHERE ID = '{id}'";
-
-                    conexaoBanco.Executar(sql);
-
-                    MessageBox.Show("O usuário de id: " + id + " foi removido!");
-                }
-                else
-                {
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecione um usuário antes de prosseguir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             AtualizaGrid();
         }
 

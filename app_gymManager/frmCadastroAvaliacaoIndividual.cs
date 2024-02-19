@@ -62,7 +62,10 @@ namespace app_gymManager
         {
             if (editar)
             {
-                string sql = $"SELECT * FROM ALUNO WHERE ID = '{idAluno}'";
+                
+
+                string sql = $"SELECT * FROM LUSUARIO WHERE ID = '{idAluno}'";
+               
 
                 txtNomeCompleto.Text = conexaoBanco.GetRowAsString(sql, "NOME");
                 txtCPF.Text             = conexaoBanco.GetRowAsString(sql, "CPF");
@@ -78,7 +81,7 @@ namespace app_gymManager
             }
             else
             {
-                string sql = $"SELECT * FROM ALUNO WHERE ID = '{idAluno}'";
+                string sql = $"SELECT * FROM LUSUARIO WHERE ID = '{idAluno}'";
 
                 txtNomeCompleto.Text = conexaoBanco.GetRowAsString(sql, "NOME");
                 txtCPF.Text = conexaoBanco.GetRowAsString(sql, "CPF");
