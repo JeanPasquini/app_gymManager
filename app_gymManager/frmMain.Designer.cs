@@ -36,6 +36,8 @@ namespace app_gymManager
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -49,16 +51,20 @@ namespace app_gymManager
             this.mainTela = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtPermissao = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.txtPermissao = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip5 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.toolStrip3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip4.SuspendLayout();
+            this.toolStrip5.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -69,7 +75,9 @@ namespace app_gymManager
             this.toolStripSeparator1,
             this.toolStripButton2,
             this.toolStripSeparator5,
-            this.toolStripButton4});
+            this.toolStripButton4,
+            this.toolStripSeparator6,
+            this.toolStripButton12});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -85,12 +93,14 @@ namespace app_gymManager
             this.toolStripButton1.Size = new System.Drawing.Size(57, 22);
             this.toolStripButton1.Text = "Controle";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolStripButton1.Visible = false;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Visible = false;
             // 
             // toolStripButton2
             // 
@@ -100,12 +110,14 @@ namespace app_gymManager
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(56, 22);
             this.toolStripButton2.Text = "Usuários";
+            this.toolStripButton2.Visible = false;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator5.Visible = false;
             // 
             // toolStripButton4
             // 
@@ -115,7 +127,26 @@ namespace app_gymManager
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(87, 22);
             this.toolStripButton4.Text = "Administrador";
+            this.toolStripButton4.Visible = false;
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator6.Visible = false;
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(85, 22);
+            this.toolStripButton12.Text = "Área do aluno";
+            this.toolStripButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton12.Visible = false;
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
             // 
             // toolStrip2
             // 
@@ -241,6 +272,12 @@ namespace app_gymManager
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(134, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // txtPermissao
+            // 
+            this.txtPermissao.Name = "txtPermissao";
+            this.txtPermissao.Size = new System.Drawing.Size(118, 17);
+            this.txtPermissao.Text = "toolStripStatusLabel2";
+            // 
             // toolStrip4
             // 
             this.toolStrip4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,17 +317,40 @@ namespace app_gymManager
             this.toolStripButton11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
             // 
-            // txtPermissao
+            // toolStrip5
             // 
-            this.txtPermissao.Name = "txtPermissao";
-            this.txtPermissao.Size = new System.Drawing.Size(118, 17);
-            this.txtPermissao.Text = "toolStripStatusLabel2";
+            this.toolStrip5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton13,
+            this.toolStripSeparator7});
+            this.toolStrip5.Location = new System.Drawing.Point(0, 50);
+            this.toolStrip5.Name = "toolStrip5";
+            this.toolStrip5.Size = new System.Drawing.Size(800, 44);
+            this.toolStrip5.TabIndex = 7;
+            this.toolStrip5.Text = "toolStrip5";
+            this.toolStrip5.Visible = false;
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.Image = global::app_gymManager.Properties.Resources.checklist;
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(114, 41);
+            this.toolStripButton13.Text = "Ver Avaliações";
+            this.toolStripButton13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 44);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.toolStrip5);
             this.Controls.Add(this.toolStrip4);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.mainTela);
@@ -310,6 +370,8 @@ namespace app_gymManager
             this.statusStrip1.PerformLayout();
             this.toolStrip4.ResumeLayout(false);
             this.toolStrip4.PerformLayout();
+            this.toolStrip5.ResumeLayout(false);
+            this.toolStrip5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,6 +402,11 @@ namespace app_gymManager
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
         private System.Windows.Forms.ToolStripStatusLabel txtPermissao;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStrip toolStrip5;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }
 

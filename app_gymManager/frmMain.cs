@@ -21,7 +21,21 @@ namespace app_gymManager
             InitializeComponent();
             toolStrips.Add(toolStrip2);
             toolStrips.Add(toolStrip4);
-            //toolStrips.Add(toolStrip3);
+            toolStrips.Add(toolStrip5);
+
+            if (conexaoBanco.idPermissao != 4)
+            {
+                toolStripButton1.Visible = true;
+                toolStripSeparator1.Visible =  true;
+                toolStripButton2.Visible = true;
+                toolStripSeparator5.Visible = true;
+                toolStripButton4.Visible = true;
+                toolStripSeparator6.Visible = true;
+            }
+            else
+            {
+                toolStripButton12.Visible = true;
+            }
             this.id = id;
             infoUser();
         }
@@ -138,6 +152,28 @@ namespace app_gymManager
 
                 frm.Show();
             }
+        }
+
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            if (permissaoBotoes.permissao(6))
+            {
+                frmVisaoAvaliacaoAluno frm = new frmVisaoAvaliacaoAluno();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.ControlBox = false;
+
+
+                mainTela.Controls.Clear();
+                mainTela.Controls.Add(frm);
+
+                frm.Show();
+            }
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            MostrarToolStrip(toolStrip5);
         }
     }
 }

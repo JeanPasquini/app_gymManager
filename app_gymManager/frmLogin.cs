@@ -47,6 +47,8 @@ namespace app_gymManager
 
                 this.Hide();
                 int id = int.Parse(conexaoBanco.GetRowAsString(sqlSenha, "ID"));
+                int idpermissao = int.Parse(conexaoBanco.GetRowAsString(sqlSenha, "CODPERMISSAO"));
+                conexaoBanco.idPermissao = idpermissao;
                 conexaoBanco.idUser = id;
                 frmMain mainForm = new frmMain(id);
                 mainForm.ShowDialog();
@@ -90,6 +92,8 @@ namespace app_gymManager
                 {
                     this.Hide();
                     int id = int.Parse(conexaoBanco.GetRowAsString(sqlSenha, "ID"));
+                    int idpermissao = int.Parse(conexaoBanco.GetRowAsString(sqlSenha, "CODPERMISSAO"));
+                    conexaoBanco.idPermissao = idpermissao;
                     conexaoBanco.idUser = id;
                     frmMain mainForm = new frmMain(id);
                     mainForm.ShowDialog();

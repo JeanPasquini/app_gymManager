@@ -14,6 +14,7 @@ namespace app_gymManager
     {
         private static string connectionString;
         public static int idUser;
+        public static int idPermissao;
 
         public static SqlConnection OpenConnection()
         {

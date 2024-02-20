@@ -22,6 +22,19 @@ namespace app_gymManager
             this.editar = editar;
             this.id = id;
             InitializeComponent();
+
+            if (conexaoBanco.idPermissao == 4)
+            {
+                txtDescricao.ReadOnly =     true;
+                txtBracoDireito.ReadOnly =  true;
+                txtBracoEsquerdo.ReadOnly = true;
+                txtPernaDireita.ReadOnly =  true;
+                txtPernaEsquerda.ReadOnly = true;
+
+                txtDataAvaliacao.Enabled =  false;
+                btnCadastrar.Visible = false;
+                btnCancelar.Visible = false;
+            }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

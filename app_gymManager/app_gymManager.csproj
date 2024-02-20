@@ -98,6 +98,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVisaoAvaliacaoAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisaoAvaliacaoAluno.Designer.cs">
+      <DependentUpon>frmVisaoAvaliacaoAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVisaoPermissoes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisaoAvaliacaoAluno.resx">
+      <DependentUpon>frmVisaoAvaliacaoAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisaoPermissoes.resx">
       <DependentUpon>frmVisaoPermissoes.cs</DependentUpon>
