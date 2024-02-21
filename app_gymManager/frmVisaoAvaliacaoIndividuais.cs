@@ -106,5 +106,53 @@ namespace app_gymManager
             frm.ShowDialog();
             AtualizaGrid();
         }
+
+        private void btnEnviarAvaliacao_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+            }
+            else
+            {
+            }
+            string sql = $"SELECT * FROM LUSUARIO WHERE ID = '{idAluno}'";
+            string sqlAval = $"SELECT * FROM AVALIACAOALUNO WHERE ID = '{id}'";
+
+            string mensagemEmail = ObterPeriodoDoDia() + " " + conexaoBanco.GetRowAsString(sql, "NOME ") + "\n\n";
+            mensagemEmail += "Descrição: " + conexaoBanco.GetRowAsString(sqlAval, "DESCRICAO") + "\n\n";
+            mensagemEmail += "Perna Direita: " + conexaoBanco.GetRowAsString(sqlAval, "PERNADIREITA") + "\n";
+            mensagemEmail += "Perna Esquerda: " + conexaoBanco.GetRowAsString(sqlAval, "PERNAESQUERDA") + "\n";
+            mensagemEmail += "Braço Direito: " + conexaoBanco.GetRowAsString(sqlAval, "BRACODIREITO") + "\n";
+            mensagemEmail += "Braço Direito: " + conexaoBanco.GetRowAsString(sqlAval, "BRACOESQUERDO") + "\n\n";
+            mensagemEmail += "Att Admin";
+
+            email.EnviarEmail(conexaoBanco.GetRowAsString(sql, "EMAIL"), "Avaliação - " + conexaoBanco.GetRowAsString(sqlAval, "DATAAVALIACAO"), mensagemEmail);
+
+        }
+
+        public string ObterPeriodoDoDia()
+        {
+            DateTime agora = DateTime.Now;
+
+            TimeSpan manhaInicio = new TimeSpan(6, 0, 0);
+            TimeSpan tardeInicio = new TimeSpan(12, 0, 0); 
+            TimeSpan noiteInicio = new TimeSpan(18, 0, 0); 
+
+            if (agora.TimeOfDay < tardeInicio)
+            {
+                return "Bom dia";
+            }
+            else if (agora.TimeOfDay < noiteInicio)
+            {
+                return "Boa tarde";
+            }
+            else
+            {
+                return "Boa noite";
+            }
+        }
     }
 }

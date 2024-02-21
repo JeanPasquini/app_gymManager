@@ -273,6 +273,7 @@ namespace app_gymManager
             this.txtDescricao.Location = new System.Drawing.Point(11, 75);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescricao.Size = new System.Drawing.Size(273, 65);
             this.txtDescricao.TabIndex = 14;
             // 

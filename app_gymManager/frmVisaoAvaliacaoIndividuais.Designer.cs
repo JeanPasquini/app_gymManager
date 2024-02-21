@@ -37,6 +37,7 @@ namespace app_gymManager
             this.btnInserir = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnRemover = new System.Windows.Forms.ToolStripButton();
+            this.btnEnviarAvaliacao = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -71,7 +72,7 @@ namespace app_gymManager
             // 
             this.toolStripLabel1.Image = global::app_gymManager.Properties.Resources.user__2_;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(102, 16);
+            this.toolStripLabel1.Size = new System.Drawing.Size(102, 22);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // toolStrip1
@@ -80,7 +81,8 @@ namespace app_gymManager
             this.btnVerGrid,
             this.btnInserir,
             this.btnEditar,
-            this.btnRemover});
+            this.btnRemover,
+            this.btnEnviarAvaliacao});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -123,6 +125,15 @@ namespace app_gymManager
             this.btnRemover.Text = "Remover";
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
+            // btnEnviarAvaliacao
+            // 
+            this.btnEnviarAvaliacao.Image = global::app_gymManager.Properties.Resources.insert_32x32;
+            this.btnEnviarAvaliacao.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEnviarAvaliacao.Name = "btnEnviarAvaliacao";
+            this.btnEnviarAvaliacao.Size = new System.Drawing.Size(113, 22);
+            this.btnEnviarAvaliacao.Text = "Enviar Avaliação";
+            this.btnEnviarAvaliacao.Click += new System.EventHandler(this.btnEnviarAvaliacao_Click);
+            // 
             // frmVisaoAvaliacaoIndividuais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,5 +166,6 @@ namespace app_gymManager
         private System.Windows.Forms.ToolStripButton btnInserir;
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnRemover;
+        private System.Windows.Forms.ToolStripButton btnEnviarAvaliacao;
     }
 }

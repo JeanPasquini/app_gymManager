@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexaoBanco.cs" />
+    <Compile Include="email.cs" />
     <Compile Include="frmSelecionaBotao.cs">
       <SubType>Form</SubType>
     </Compile>
