@@ -114,45 +114,32 @@ namespace app_gymManager
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                 id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                idAluno = Convert.ToInt32(selectedRow.Cells["IDALUNO"].Value);
             }
             else
             {
             }
-            string sql = $"SELECT * FROM LUSUARIO WHERE ID = '{idAluno}'";
-            string sqlAval = $"SELECT * FROM AVALIACAOALUNO WHERE ID = '{id}'";
 
-            string mensagemEmail = ObterPeriodoDoDia() + " " + conexaoBanco.GetRowAsString(sql, "NOME ") + "\n\n";
-            mensagemEmail += "Descrição: " + conexaoBanco.GetRowAsString(sqlAval, "DESCRICAO") + "\n\n";
-            mensagemEmail += "Perna Direita: " + conexaoBanco.GetRowAsString(sqlAval, "PERNADIREITA") + "\n";
-            mensagemEmail += "Perna Esquerda: " + conexaoBanco.GetRowAsString(sqlAval, "PERNAESQUERDA") + "\n";
-            mensagemEmail += "Braço Direito: " + conexaoBanco.GetRowAsString(sqlAval, "BRACODIREITO") + "\n";
-            mensagemEmail += "Braço Direito: " + conexaoBanco.GetRowAsString(sqlAval, "BRACOESQUERDO") + "\n\n";
-            mensagemEmail += "Att Admin";
-
-            email.EnviarEmail(conexaoBanco.GetRowAsString(sql, "EMAIL"), "Avaliação - " + conexaoBanco.GetRowAsString(sqlAval, "DATAAVALIACAO"), mensagemEmail);
-
+            frmVisaoEmail frm = new frmVisaoEmail(id);
+            frm.ShowDialog();
+            AtualizaGrid();
         }
 
-        public string ObterPeriodoDoDia()
+        private void btnVerAvaliacao_Click(object sender, EventArgs e)
         {
-            DateTime agora = DateTime.Now;
-
-            TimeSpan manhaInicio = new TimeSpan(6, 0, 0);
-            TimeSpan tardeInicio = new TimeSpan(12, 0, 0); 
-            TimeSpan noiteInicio = new TimeSpan(18, 0, 0); 
-
-            if (agora.TimeOfDay < tardeInicio)
+            int id = 0;
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                return "Bom dia";
-            }
-            else if (agora.TimeOfDay < noiteInicio)
-            {
-                return "Boa tarde";
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
             }
             else
             {
-                return "Boa noite";
             }
+
+            relatorioAvaliacao frm = new relatorioAvaliacao(id);
+            frm.ShowDialog();
+            frm.Dispose();
         }
     }
 }

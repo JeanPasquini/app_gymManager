@@ -38,6 +38,7 @@ namespace app_gymManager
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnRemover = new System.Windows.Forms.ToolStripButton();
             this.btnEnviarAvaliacao = new System.Windows.Forms.ToolStripButton();
+            this.btnVerAvaliacao = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -82,7 +83,8 @@ namespace app_gymManager
             this.btnInserir,
             this.btnEditar,
             this.btnRemover,
-            this.btnEnviarAvaliacao});
+            this.btnEnviarAvaliacao,
+            this.btnVerAvaliacao});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -134,6 +136,15 @@ namespace app_gymManager
             this.btnEnviarAvaliacao.Text = "Enviar Avaliação";
             this.btnEnviarAvaliacao.Click += new System.EventHandler(this.btnEnviarAvaliacao_Click);
             // 
+            // btnVerAvaliacao
+            // 
+            this.btnVerAvaliacao.Image = global::app_gymManager.Properties.Resources.printer;
+            this.btnVerAvaliacao.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnVerAvaliacao.Name = "btnVerAvaliacao";
+            this.btnVerAvaliacao.Size = new System.Drawing.Size(127, 22);
+            this.btnVerAvaliacao.Text = "Imprimir Avaliação";
+            this.btnVerAvaliacao.Click += new System.EventHandler(this.btnVerAvaliacao_Click);
+            // 
             // frmVisaoAvaliacaoIndividuais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,7 +156,7 @@ namespace app_gymManager
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmVisaoAvaliacaoIndividuais";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmInfoVisao";
+            this.Text = "Avaliações";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
@@ -167,5 +178,6 @@ namespace app_gymManager
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnRemover;
         private System.Windows.Forms.ToolStripButton btnEnviarAvaliacao;
+        private System.Windows.Forms.ToolStripButton btnVerAvaliacao;
     }
 }
