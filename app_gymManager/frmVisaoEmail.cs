@@ -14,6 +14,7 @@ namespace app_gymManager
     public partial class frmVisaoEmail : Form
     {
         private int id;
+        private List<string> emails { get; set; }
         public frmVisaoEmail(int id)
         {
             this.id = id;
@@ -24,9 +25,11 @@ namespace app_gymManager
         {
             frmSelecionaEmail frm = new frmSelecionaEmail();
             frm.ShowDialog();
-            if (frm.email != null)
+            if (frm.emails != null && frm.emails.Count > 0)
             {
-                txtEmail.Text = frm.email.ToString();
+                string allEmails = string.Join(", ", frm.emails);
+                txtEmail.Text = allEmails;
+                emails = frm.emails;
             }
             else
             {
@@ -51,8 +54,11 @@ namespace app_gymManager
                     mensagemEmail += "Braço Direito: " + conexaoBanco.GetRowAsString(sql, "BRACOESQUERDO") + "\n\n";
                     mensagemEmail += "Att Admin";
 
-                    string emaildestino = txtEmail.Text;
-                    email.EnviarEmail(emaildestino, "Avaliação - " + conexaoBanco.GetRowAsString(sql, "DATAAVALIACAO"), mensagemEmail);
+                    foreach (string emails in emails)
+                    {
+                        email.EnviarEmail(emails, "Avaliação - " + conexaoBanco.GetRowAsString(sql, "DATAAVALIACAO"), mensagemEmail);
+                    }
+                    
                 }
             }
         }

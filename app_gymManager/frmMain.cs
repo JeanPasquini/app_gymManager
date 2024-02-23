@@ -27,8 +27,6 @@ namespace app_gymManager
             {
                 toolStripButton1.Visible = true;
                 toolStripSeparator1.Visible =  true;
-                toolStripButton2.Visible = true;
-                toolStripSeparator5.Visible = true;
                 toolStripButton4.Visible = true;
                 toolStripSeparator6.Visible = true;
             }
@@ -53,10 +51,6 @@ namespace app_gymManager
             MostrarToolStrip(toolStrip2);
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            //MostrarToolStrip(toolStrip3);
-        }
         private void MostrarToolStrip(ToolStrip toolStripAMostrar)
         {
             foreach (var toolStrip in toolStrips)
@@ -174,6 +168,17 @@ namespace app_gymManager
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
             MostrarToolStrip(toolStrip5);
+        }
+
+        private void frmMain_SizeChanged(object sender, EventArgs e)
+        {
+            mainTela.AutoSize = true;
+            mainTela.Location = new System.Drawing.Point(0, 100);
+            mainTela.Name = "mainTela";
+            mainTela.Size = new System.Drawing.Size(800, 44);
+            mainTela.TabIndex = 5;
+            mainTela.Height = this.ClientSize.Height;
+            mainTela.Width = this.ClientSize.Width;
         }
     }
 }

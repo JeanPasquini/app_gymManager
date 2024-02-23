@@ -33,6 +33,8 @@ namespace app_gymManager
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnVerGrid = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnEnviarAvaliacao = new System.Windows.Forms.ToolStripButton();
+            this.btnVerAvaliacao = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +56,9 @@ namespace app_gymManager
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnVerGrid,
-            this.btnEditar});
+            this.btnEditar,
+            this.btnEnviarAvaliacao,
+            this.btnVerAvaliacao});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -79,7 +83,25 @@ namespace app_gymManager
             this.btnEditar.Text = "Analisar";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // frmVisaoAvaliacao
+            // btnEnviarAvaliacao
+            // 
+            this.btnEnviarAvaliacao.Image = global::app_gymManager.Properties.Resources.insert_32x32;
+            this.btnEnviarAvaliacao.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEnviarAvaliacao.Name = "btnEnviarAvaliacao";
+            this.btnEnviarAvaliacao.Size = new System.Drawing.Size(113, 22);
+            this.btnEnviarAvaliacao.Text = "Enviar Avaliação";
+            this.btnEnviarAvaliacao.Click += new System.EventHandler(this.btnEnviarAvaliacao_Click);
+            // 
+            // btnVerAvaliacao
+            // 
+            this.btnVerAvaliacao.Image = global::app_gymManager.Properties.Resources.printer;
+            this.btnVerAvaliacao.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnVerAvaliacao.Name = "btnVerAvaliacao";
+            this.btnVerAvaliacao.Size = new System.Drawing.Size(127, 22);
+            this.btnVerAvaliacao.Text = "Imprimir Avaliação";
+            this.btnVerAvaliacao.Click += new System.EventHandler(this.btnVerAvaliacao_Click);
+            // 
+            // frmVisaoAvaliacaoAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +109,7 @@ namespace app_gymManager
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmVisaoAvaliacao";
+            this.Name = "frmVisaoAvaliacaoAluno";
             this.Text = "frmInfoVisao";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -103,5 +125,7 @@ namespace app_gymManager
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnVerGrid;
         private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.ToolStripButton btnEnviarAvaliacao;
+        private System.Windows.Forms.ToolStripButton btnVerAvaliacao;
     }
 }

@@ -33,8 +33,6 @@ namespace app_gymManager
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
@@ -73,8 +71,6 @@ namespace app_gymManager
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripSeparator1,
-            this.toolStripButton2,
-            this.toolStripSeparator5,
             this.toolStripButton4,
             this.toolStripSeparator6,
             this.toolStripButton12});
@@ -90,8 +86,8 @@ namespace app_gymManager
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(57, 22);
-            this.toolStripButton1.Text = "Controle";
+            this.toolStripButton1.Size = new System.Drawing.Size(113, 22);
+            this.toolStripButton1.Text = "Controle de Alunos";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.toolStripButton1.Visible = false;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
@@ -101,23 +97,6 @@ namespace app_gymManager
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             this.toolStripSeparator1.Visible = false;
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(56, 22);
-            this.toolStripButton2.Text = "Usuários";
-            this.toolStripButton2.Visible = false;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            this.toolStripSeparator5.Visible = false;
             // 
             // toolStripButton4
             // 
@@ -247,9 +226,10 @@ namespace app_gymManager
             // 
             // mainTela
             // 
+            this.mainTela.AutoSize = true;
             this.mainTela.Location = new System.Drawing.Point(0, 100);
             this.mainTela.Name = "mainTela";
-            this.mainTela.Size = new System.Drawing.Size(800, 325);
+            this.mainTela.Size = new System.Drawing.Size(800, 400);
             this.mainTela.TabIndex = 5;
             // 
             // statusStrip1
@@ -350,8 +330,8 @@ namespace app_gymManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.toolStrip5);
             this.Controls.Add(this.toolStrip4);
+            this.Controls.Add(this.toolStrip5);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.mainTela);
             this.Controls.Add(this.toolStrip2);
@@ -360,6 +340,7 @@ namespace app_gymManager
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gym Manager";
+            this.SizeChanged += new System.EventHandler(this.frmMain_SizeChanged);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
@@ -381,7 +362,6 @@ namespace app_gymManager
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStrip toolStrip3;
@@ -399,7 +379,6 @@ namespace app_gymManager
         private System.Windows.Forms.ToolStrip toolStrip4;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
         private System.Windows.Forms.ToolStripStatusLabel txtPermissao;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;

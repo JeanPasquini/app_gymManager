@@ -15,6 +15,9 @@ namespace app_gymManager
         public frmVisaoAlunos()
         {
             InitializeComponent();
+            toolStrip1.Dock = DockStyle.Top;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.BringToFront();
             AtualizaGrid();
         }
 

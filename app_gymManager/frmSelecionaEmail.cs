@@ -13,8 +13,7 @@ namespace app_gymManager
 {
     public partial class frmSelecionaEmail : Form
     {
-        public int id { get; set; }
-        public string email { get; set; }
+        public List<string> emails { get; set; }
 
         public frmSelecionaEmail()
         {
@@ -24,16 +23,17 @@ namespace app_gymManager
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            string email = "";
-            if (dataGridView1.SelectedRows.Count > 0)
+            List<string> emails = new List<string>();
+            foreach (DataGridViewRow selectedRow in dataGridView1.SelectedRows)
             {
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                email = (selectedRow.Cells["EMAIL"].Value).ToString();
+                string email = selectedRow.Cells["EMAIL"].Value?.ToString();
+                if (!string.IsNullOrEmpty(email))
+                {
+                    emails.Add(email);
+                }
             }
-            else
-            {
-            }
-            this.email = email;
+
+            this.emails = emails;
             this.Close();
         }
 
@@ -50,16 +50,17 @@ namespace app_gymManager
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            string email = null;
-            if (dataGridView1.SelectedRows.Count > 0)
+            List<string> emails = new List<string>();
+            foreach (DataGridViewRow selectedRow in dataGridView1.SelectedRows)
             {
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                email = (selectedRow.Cells["EMAIL"].Value).ToString();
+                string email = selectedRow.Cells["EMAIL"].Value?.ToString();
+                if (!string.IsNullOrEmpty(email))
+                {
+                    emails.Add(email);
+                }
             }
-            else
-            {
-            }
-            this.email = email;
+
+            this.emails = emails;
             this.Close();
         }
     }

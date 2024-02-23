@@ -15,6 +15,9 @@ namespace app_gymManager
         public frmVisaoAvaliacaoAluno()
         {
             InitializeComponent();
+            toolStrip1.Dock = DockStyle.Top;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.BringToFront();
             AtualizaGrid();
         }
 
@@ -78,6 +81,40 @@ namespace app_gymManager
             frmCadastroAvaliacaoIndividual frm = new frmCadastroAvaliacaoIndividual(true, id, conexaoBanco.idUser);
             frm.ShowDialog();
             AtualizaGrid();
+        }
+
+        private void btnEnviarAvaliacao_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+            }
+            else
+            {
+            }
+
+            frmVisaoEmail frm = new frmVisaoEmail(id);
+            frm.ShowDialog();
+            AtualizaGrid();
+        }
+
+        private void btnVerAvaliacao_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+            }
+            else
+            {
+            }
+
+            relatorioAvaliacao frm = new relatorioAvaliacao(id);
+            frm.ShowDialog();
+            frm.Dispose();
         }
     }
 }
