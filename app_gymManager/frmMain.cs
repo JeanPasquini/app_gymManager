@@ -180,5 +180,39 @@ namespace app_gymManager
             mainTela.Height = this.ClientSize.Height;
             mainTela.Width = this.ClientSize.Width;
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (permissaoBotoes.permissao(7))
+            {
+                frmVisaoAgendarAula frm = new frmVisaoAgendarAula();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.ControlBox = false;
+
+
+                mainTela.Controls.Clear();
+                mainTela.Controls.Add(frm);
+
+                frm.Show();
+            }
+        }
+
+        private void toolStripButton14_Click(object sender, EventArgs e)
+        {
+            if (permissaoBotoes.permissao(8))
+            {
+                frmVisaoAulaCriar frm = new frmVisaoAulaCriar();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.ControlBox = false;
+
+
+                mainTela.Controls.Clear();
+                mainTela.Controls.Add(frm);
+
+                frm.Show();
+            }
+        }
     }
 }

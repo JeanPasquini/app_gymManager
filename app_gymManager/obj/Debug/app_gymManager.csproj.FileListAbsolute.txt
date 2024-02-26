@@ -98,3 +98,7 @@ C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymMa
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.relatorioAvaliacao.resources
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmSelecionaEmail.resources
 C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoEmail.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoAgendarAula.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmCadastroAula.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoAulaCriar.resources
+C:\Users\User\Documents\GitHub\app_gymManager\app_gymManager\obj\Debug\app_gymManager.frmVisaoAulaAlunos.resources
