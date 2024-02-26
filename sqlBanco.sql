@@ -42,6 +42,22 @@ CREATE TABLE DINAMICABOTOES (
     DESCRICAO VARCHAR(MAX)
 );
 
+CREATE TABLE AULASDISPONIVEIS (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+	DATAHORARIO DATETIME,
+	TITULO VARCHAR(MAX),
+    DESCRICAO VARCHAR(MAX),
+	QTDPESSOAS INT,
+	PROFESSORES VARCHAR(MAX),
+	ESTADO VARCHAR(MAX)
+);
+
+CREATE TABLE AULAINFORMACAO (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    IDALUNO INT,
+	IDAULA INT
+);
+
 INSERT INTO BOTOESPERMISSOES(
     IDBOTAO, IDUSUARIO)
 VALUES ('2' , '1');
@@ -63,8 +79,11 @@ VALUES ('Mestre'),
 
 INSERT INTO DINAMICABOTOES(
     DESCRICAO)
-VALUES ('UsuÃ¡rios'),
-	   ('PermissÃµes'),
-	   ('InformaÃ§Ãµes'),
+VALUES ('Usuários'),
+	   ('Permissões'),
+	   ('Informações'),
 	   ('Alunos'),
-	   ('AvaliaÃ§Ã£o');
+	   ('Avaliação'),
+	   ('Ver Avaliação'),
+	   ('Agendar Aula'),
+	   ('Criar Aula');
