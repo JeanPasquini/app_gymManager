@@ -107,7 +107,7 @@ namespace app_gymManager
                 txtHoraAula.Text = dataHora.ToShortTimeString();
                 txtDescricaoAula.Text = conexaoBanco.GetRowAsString(sql, "DESCRICAO");
 
-                if (conexaoBanco.GetRowAsString(sql, "QTDPESSOAS") == "")
+                if (String.IsNullOrWhiteSpace(conexaoBanco.GetRowAsString(sql, "QTDPESSOAS")))
                 {
                     txtQtdeAlunos.Text = "0";
                 }

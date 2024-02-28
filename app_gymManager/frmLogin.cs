@@ -75,8 +75,6 @@ namespace app_gymManager
                 string usuarioBanco = conexaoBanco.GetRowAsString(sqlUsuario, "LOGINUSER");
                 string senhaBanco = conexaoBanco.GetRowAsString(sqlSenha, "SENHA");
 
-
-                // Verificar se a senha do banco pode ser convertida para int
                 if (usuario == usuarioBanco && senha != senhaBanco)
                 {
 
